@@ -1,0 +1,19 @@
+@import url('../SignIn/SignIn.css');
+
+
+.img-signup{
+    height: 100%;
+    width: 100%;
+    background: url('../../assets/singin.jpeg') no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.terms span{
+    color: #eb4a36;
+    cursor: pointer;
+}
+.terms span:hover{
+    color: rgb(76, 76, 76);
+}

@@ -1,0 +1,123 @@
+.signIn{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* -------------------------------------- */
+/*                  Form                  */
+/* -------------------------------------- */
+form h2{
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 15px;
+}
+form .signin-with-social{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+form .signin-with-social div:nth-child(1){
+    color: #3b5998;
+    border: 1px solid #3b5998;
+}
+form .signin-with-social div:nth-child(1):hover{
+    background-color: #3b5998;
+    color: white;
+}
+
+form .signin-with-social div:nth-child(2){
+    color: #eb4a36;
+    border: 1px solid #eb4a36;
+}
+form .signin-with-social div:nth-child(2):hover{
+    background-color: #eb4a36;
+    color: white;
+}
+
+form .signin-with-social div:nth-child(3){
+    color: #0e76a8;
+    border: 1px solid #0e76a8;
+}
+form .signin-with-social div:nth-child(3):hover{
+    background-color: #0e76a8;
+    color: white;
+}
+form .otherjoin{
+    font-size: 18px;
+    color: #6b6b6b;
+}
+form .forgotPass{
+    cursor: pointer;
+}
+input{
+    width: 100%;
+    padding: 0.5rem 0;
+    border-radius: 50px;
+    border: 1px solid #b3b3b3;
+    text-align: center;
+    outline: none;
+}
+input:focus{
+    border: 2px solid #eb4a36;
+}
+input::placeholder{
+    color: #b3b3b3;
+}
+
+/* -------------------------------------- */
+/*                  Sec 2                 */
+/* -------------------------------------- */
+.sec2-signin{
+    width: 100%;
+    height: 600px;
+    position: relative;
+}
+.img-signin{
+    height: 100%;
+    width: 100%;
+    background: url('../../assets/photo-1556911220-e15b29be8c8f.jpeg') no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.sec2-signin .text-on-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 0 2rem;
+    gap: 0.7rem;
+}
+.sec2-signin .text-on-img p{
+    color: white;
+}
+.sec2-signin .text-on-img button{
+    background-color: white;
+}
+.sec2-signin .text-on-img button:hover{
+    box-shadow: 2px 2px 3px #aaa;
+}
+.sec2-signin .text-on-img button a{
+    color: #4b4b4b;
+}

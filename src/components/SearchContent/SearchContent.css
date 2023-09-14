@@ -1,0 +1,125 @@
+.divSearch{
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    background-color: #f9f5f4;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+}
+.divSearch svg{
+    color: rgba(0, 0, 0, 0.4);
+}
+.divSearch input{
+    border: 0;
+    background-color: transparent;
+    text-align: start;
+}
+
+select{
+    background-image: url(data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%234a4a4a%22%20points%3D%2212%201%209%206%2015%206%22%20%2F%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%234a4a4a%22%20points%3D%2212%2013%209%208%2015%208%22%20%2F%3E%0A%3C%2Fsvg%3E%0A);
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-position: 95% 50%;
+    padding: 0.5rem 2.5rem 0.5rem  1.5rem;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background-color: #f9f5f4;
+    font-size: 13px;
+    height: fit-content;
+}
+
+select option{
+    padding: 10px !important;
+}
+select option:hover{
+    background-color: #eb4a36;
+    color: white;
+    font-size: 14px;
+}
+
+
+.img-food{
+    position: relative;
+    border-radius: 13px;
+}
+.img-food img{
+    border-radius: 13px;
+    width: 100%;
+}
+.img-food .iconHeart{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    color: white;
+    font-size: 20px;
+    border-radius: 13px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: end;
+    transition: 0.2s linear;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.img-food:hover .iconHeart{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.img-food .iconHeart svg{
+    z-index: 1000;
+    position: relative;
+}
+.img-food .iconHeart svg:hover{
+    transition: 0.3s;
+    color: red;
+}
+.img-food .iconHeart svg.active{
+    color: red;
+}
+
+h6{
+    font-size: 15px;
+}
+
+.notFound{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+input:focus {
+    border: 0 !important;
+}
+
+
+/* ------------------------------------------- */
+/*                  Pagination                 */
+/* ------------------------------------------- */
+.pagination{
+    justify-self: center;
+    margin-top: 2.5rem;
+}
+.pagination ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 2.5rem;
+}
+.pagination .pageNum{
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+}
+.pagination .pageNum:hover,
+.pagination .activePageNum{
+    font-weight: 600;
+    color: #eb4a36;
+}
+
+
+.placeholder-img{
+    min-height: 150px;
+}
+@media (min-width: 512px) {
+    .placeholder-img{
+        min-height: 200px;
+    }
+}

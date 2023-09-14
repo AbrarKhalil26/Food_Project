@@ -1,0 +1,64 @@
+.footer .f-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+a{
+    text-decoration: none; 
+}
+.footer .s-row  p{
+    margin-bottom: 10px;
+
+}
+.footer .s-row  a{
+    color: rgba(0, 0, 0,0.8);
+    font-weight: 500;
+    font-size: 17px;
+}
+.footer .s-row  a:hover{
+    color:gray;
+}
+
+
+
+.contact-icons{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.contact-icons a{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 2.5rem;
+    transition: 0.3s;
+}
+.contact-icons a:nth-child(1){
+    color: #3b5998;
+    border: 1px solid #3b5998;
+}
+.contact-icons a:nth-child(1):hover{
+    background-color: #3b5998;
+    color: white;
+}
+
+.contact-icons a:nth-child(2){
+    color: #eb4a36;
+    border: 1px solid #eb4a36;
+}
+.contact-icons a:nth-child(2):hover{
+    background-color: #eb4a36;
+    color: white;
+}
+
+.contact-icons a:nth-child(3){
+    color: #0e76a8;
+    border: 1px solid #0e76a8;
+}
+.contact-icons a:nth-child(3):hover{
+    background-color: #0e76a8;
+    color: white;
+}

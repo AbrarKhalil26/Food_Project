@@ -1,0 +1,198 @@
+
+.contentHome{
+    font-family: "Montserrat", "san-serif";
+    min-height: 100vh;
+}
+.contentHome input:focus{
+    border: none;
+}
+/* ---------------------------------------- */
+/*                  Header                  */
+/* ---------------------------------------- */
+.sec-1 .img-card{
+    width: 100%;
+    background-image: url("../../assets/header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:white;
+    line-height: 1.8rem;
+    height: 100%;
+}
+.sec-1 .img-card-content{
+    width: 600px;
+    padding: 5rem 3rem;
+}
+.sec-1 .card-title{
+    font-weight: bolder;
+    margin-bottom: 3%;
+    font-size: 3rem;
+}
+.sec-1 .img-card-content p{
+    color: white;
+}
+.sec-1 .img-card a{
+    margin-top: 3%;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    color:white; 
+}
+.sec-1 .img-card a:hover{
+    margin-left: 3%;
+    color: #eb4a36 ;
+}
+@media (max-width: 565px) {
+    .sec-1 .img-card-content{
+        text-align: center;
+        width: 100%;
+        padding: 3rem;
+    }
+    .sec-1 .card-title{
+        font-size: 2rem;
+    }
+}
+/* ---------------------------------------- */
+/*                   Main                   */
+/* ---------------------------------------- */
+
+.sec-2{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+/*aside*/ 
+.sec-2 .aside{
+    position: sticky;
+    top: 10%;
+}
+
+
+/* ---------------------------------------- */
+/*                   Videos                 */
+/* ---------------------------------------- */
+
+.sec-3 .f-row{
+    justify-content:space-between; 
+}
+.sec-3 .f-row h1{
+    width:15%;
+}
+.sec-3 select{
+    border-radius: 0%;
+    background-color: #eb4a36;
+    color: white;
+    padding: 0.7rem 2.5rem 0.7rem  1.5rem;
+    border-radius: 50px;
+    background-image: url(data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23fff%22%20points%3D%2212%201%209%206%2015%206%22%20%2F%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23fff%22%20points%3D%2212%2013%209%208%2015%208%22%20%2F%3E%0A%3C%2Fsvg%3E%0A);
+    background-repeat: no-repeat;
+}
+
+.sec-3 select option:checked,
+.sec-3 select option:hover{
+    background-color: white;
+    color: #eb4a36;
+}
+/* ---------------------------------------- */
+/*             Meal With Video              */
+/* ---------------------------------------- */
+
+.singleMeal{
+    cursor: pointer;
+}
+.imgSingleMeal{
+    border-radius: 20px;
+}
+.imgSingleMeal img{
+    width: 100%;
+    border-radius: 20px;
+    min-height: 400px;
+    object-fit: cover;
+}
+.detailsSigleMeal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1.5rem;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    display: grid;
+}
+.detailsSigleMeal:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.playVideo{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 4px solid white;
+    text-align: center;
+    line-height: 4rem;
+    color: #eb4a36;
+    font-size: 1.5rem;
+    justify-self: center;
+    align-self: flex-end;
+    position: relative;
+    top: 40%;
+    transform: translateY(-50%);
+}
+.textMeal{
+    color: white;
+    align-self: flex-end;
+}
+.textMeal h6{
+    font-size: 1rem;
+}
+.textMeal p{
+    color: white
+}
+
+
+/* ---------------------------------------- */
+/*                 Subscribe                */
+/* ---------------------------------------- */
+
+.sec-4 .card{
+    background-color: #eb4a36;
+    border-radius:20px;
+    color: white;
+    border: 0;
+    padding: 4rem 13rem;
+    text-align: center;
+}
+.sec-4 form{
+    flex-direction: row;
+}
+.sec-4 .card form input{
+    flex: 3;
+    border: 1px white solid;
+    background-color: #eb4a36; 
+    text-align: start;
+    width: 100%;
+    padding-left: 20px;
+    color: white;
+}
+.sec-4 .card form input::placeholder{
+    color: white;
+}
+.sec-4 .card form button{
+    flex: 1;
+    border: 0;
+}
+
+@media (max-width: 950px) {
+    .sec-4 .card{
+        padding: 4rem 5rem;
+    }
+}
+@media (max-width: 650px) {
+    .sec-4 .card{
+        padding: 3rem;
+    }
+    .sec-4 form{
+        flex-direction: column;
+    }
+    .sec-4 h2{
+        font-size: 1.2rem;
+    }
+}

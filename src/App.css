@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+.logo{
+    font-family: "Leckerli One", cursive;
+    color: #eb4a36;
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+.general-btn,
+.general-btn:hover{
+    border-radius: 50px;
+    background-color: #eb4a36;
+    padding: 10px 35px;
+    transition: 0.3s linear;
+}
+.general-btn:hover{
+    box-shadow: 0px 2px 5px rgba(235, 74, 54, 0.5);
+}
+.general-btn a{
+    text-decoration: none;
+    color: white;
+}
+p{
+    color: #8c8c8c;
+    font-size: 14px;
+    margin: 0;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+.general-icon{
+    width: 45px;
+    height: 45px;
+    line-height: 2.7rem;
+    transition: 0.3s all;
+    cursor: pointer;
+    border-radius: 50%;
+}
+label{
+    color: #333;
+}
+
+.warningPass{
+    color: #eb4a36;
+    font-style: italic;
+    font-size: 13px;
+}
+.errorinput{
+    border: 2px solid #eb4a36;
+}
+a{
+    text-decoration: none;
+}

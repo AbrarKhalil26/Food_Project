@@ -1,0 +1,43 @@
+.PageContact{
+    display: grid;
+    gap: 3rem;
+}
+.Contact h1{
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+.Contact p{
+    font-size: 1rem;
+    line-height: 1.8rem;
+    margin-bottom: 2rem;
+}
+.Contact form{
+    background-color: #eb4a36;
+    align-items: self-start;
+    border-radius: 15px;
+    padding: 2.5rem;
+}
+.Contact form input{
+    border: 1px solid rgba(255, 255, 255, 0.91);
+    background-color: transparent;
+    margin-bottom: 1rem;
+    text-align: start;
+    color: white;
+}
+.Contact form label{
+    color: rgba(255, 255, 255, 0.9)
+}
+.Contact form textarea{
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.91);
+    background-color: transparent;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+}
+.Contact form button{
+    align-self: center;
+}
+.Contact form input,
+.Contact form textarea{
+    padding: 0.5rem 1rem;
+}

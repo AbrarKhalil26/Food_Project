@@ -1,0 +1,257 @@
+.RecipePage{
+    display: grid;
+    min-height: 100vh;
+    gap: 2rem;
+}
+.RecipePage .Footer{
+    align-self: flex-end;
+}
+.contentRecipe{
+    font-family: "Montserrat", san-serif;
+    color: rgb(74, 74, 74); 
+    display: grid;
+    gap: 4rem;
+}
+
+/****************************************************************************** main ***************************************************************************/
+
+.main img{
+    border-radius:5%;
+}
+.main  .main-header{
+    font-weight: bold;
+    max-width:500px;
+}
+.main  .content-container  h1{
+    margin-bottom: 4%;
+    color: #000;
+}
+.main .content-container .three-icons{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px rgba(0, 0, 0,0.1) solid;
+    text-align: center;
+    justify-content: space-evenly;
+}
+.main .content-container .three-icons div:nth-child(1),
+.main .content-container .three-icons div:nth-child(2){
+    border-right: 1px solid rgba(0, 0, 0,0.1);
+}
+.main .content-container .three-icons svg{
+    margin-bottom: 10px;
+    width: 35px;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+.main .content-container .three-icons h6{
+    color:black;
+}
+.main .content-container .last-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top:5%;
+}
+.main .content-container .last-row a{
+    color: #eb4a36;
+}
+.main .content-container .last-row a:hover{
+    color: #000;
+}
+.main .content-container .last-row .icons a{
+    margin-left:5px;   
+}
+
+
+/****************************************************************************** content-1 ***************************************************************************/
+/***********************************articles**************************/
+/*steps*/
+.content-1 .articles{
+    padding-left: 50px; 
+    padding-right: 50px; 
+}
+.content-1 .art-header  ,
+.aside-header{
+    color:#000;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+.content-1 .articles .step-cont{
+    display: flex;
+    margin-top: 15px;
+}
+.content-1 .articles .step-cont .step-body{
+    padding-left:15px;
+}
+.content-1 .articles .step-cont .step-body .head{
+    display: flex;
+}
+
+.content-1 .articles .step-cont .step-body span{
+    display: inline-block;
+    color: #eb4a36;
+    font-weight: 500;
+    margin-right: 15px;
+}
+.content-1 .articles .step-cont .step-body hr{
+    width:90%;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.content-1 .articles .step-cont .step-body p{
+    margin-top: 20px;
+}
+.content-1 .articles .head-2{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color:#000;
+    font-weight: bold;
+}
+
+/*comments*/
+.content-1 .articles .waman-div ,
+.man-div{
+    text-align: left;
+    border-radius: 5px;
+}
+.man-div{
+    background-color:#f9f5f4; 
+    margin-right: 0%;
+}
+.comments .header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.comments .header .static{
+    display: flex;
+}
+.comments .header  .static img{
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    margin-right: 25px;
+}
+.comments .header  .dynamic{
+    margin-top: 25px;
+    margin-right:  15px;
+} 
+
+/*spcial comments*/
+.special-comments{
+    padding-left:15%;
+}
+.comments .special-comments .man-div,
+.waman-div{
+    padding: 4% 6%;
+}
+/*********************************** aside **************************/
+.content-1 .aside{
+    padding-right:5%;
+}
+.aside li{
+    padding-left: 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0,0.1);
+}
+.aside li:last-child{
+    border-bottom: 0;
+}
+.tags-header ,
+.icons-header{
+    color:#000;
+    font-weight: bold;
+
+}
+.tags-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.tags-container a{
+    font-size: 13px;
+    font-weight: 600;
+}
+.tags-container div{
+    background-color:#f9f5f4; 
+    margin:4px;
+    padding:6px 12px;
+    border-radius: 8px;
+    color: rgb(74, 74, 74); 
+}
+
+.icons-container{
+    display: flex;
+    gap: 1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.icons-container a:nth-child(1){
+    color: #3b5998;
+    border: 1px solid #3b5998;
+}
+.icons-container a:nth-child(1):hover{
+    background-color: #3b5998;
+    color: white;
+}
+
+.icons-container a:nth-child(3){
+    color: #00acee;
+    border: 1px solid #00acee;
+}
+.icons-container a:nth-child(3):hover{
+    background-color: #00acee;
+    color: white;
+}
+
+.icons-container a:nth-child(2){
+    color: #0e76a8;
+    border: 1px solid #0e76a8;
+}
+.icons-container a:nth-child(2):hover{
+    background-color: #0e76a8;
+    color: white;
+}
+
+/****************************************************************************** content-2 ***************************************************************************/
+.content-2{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color:#f9f5f4;
+}
+.content-2 .content-row{
+    background-color:#f9f5f4; 
+}
+.content-2 .content-row .galary{
+    max-width: 1350px;
+    margin-left: auto;
+    margin-right:auto;
+    background-color:#f9f5f4;
+}
+.content-2 .content-row .galary h4{
+    font-weight: bold;
+    color: #000;
+}
+.galary .pic .card-body{
+    background-color:#f9f5f4; 
+}
+.galary .pic .card-title{
+    color: #000;
+    font-size:14px;
+    font-weight: bold;
+    margin-top: 11px;
+}
+.galary .pic-row a{
+    text-decoration: none;
+}
+.pic .card-text{
+    display:flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+.content-2 .img-food .iconHeart{
+    border-radius: 5px;
+}
+.placeholder-img-recipe{
+    min-height: 150px;
+}

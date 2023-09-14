@@ -1,0 +1,12 @@
+.SearchPage{
+    display: grid;
+    min-height: 100vh;
+}
+.SearchPage .Footer{
+    align-self: flex-end;
+}
+
+.SearchContent{
+    margin: 3rem 0;
+    font-family: "Montserrat", san-serif;
+}
