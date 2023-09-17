@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Home.css'
-import Navbar from '../../components/Navbar/Navbar'
-import Footer from '../../components/Footer/Footer'
+import Navbar from '../../layout/Navbar/Navbar'
+import Footer from '../../layout/Footer/Footer'
 import SearchContent from '../../components/SearchContent/SearchContent'
 import Accordion from '../../components/Accordion/Accordion'
 
@@ -17,7 +17,7 @@ import { questions } from '../../db/dataApi'
 const Home = () => {
 
 
-  const [dataLinks, setDataLinks] = useState(questions);
+  const [dataLinks] = useState(questions);
   const [mealVideos, setMealVideos] = useState([]);
   const [playVideo, setPlayVideo] = useState('');
   const [loading, setLoading] = useState(true);
@@ -125,7 +125,7 @@ const Home = () => {
                         {
                           loading ? (
                             Array.from({ length: 4 }).map((_, index) => (
-                              <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+                              <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={index}>
                                 <a
                                   className="singleMeal position-relative text-light"
                                   href={playVideo}
@@ -133,7 +133,7 @@ const Home = () => {
                                   target='_blank'
                                 >
                                   <div className="imgSingleMeal">
-                                    <img src={''} alt="" className='placeholder'/>
+                                    <img src='' alt="" className='placeholder'/>
                                   </div>
                                   <div className="detailsSigleMeal">
                                     <div className="playVideo">

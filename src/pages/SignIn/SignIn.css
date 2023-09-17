@@ -20,40 +20,7 @@ form h2{
     font-weight: 600;
     margin-top: 15px;
 }
-form .signin-with-social{
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
 
-form .signin-with-social div:nth-child(1){
-    color: #3b5998;
-    border: 1px solid #3b5998;
-}
-form .signin-with-social div:nth-child(1):hover{
-    background-color: #3b5998;
-    color: white;
-}
-
-form .signin-with-social div:nth-child(2){
-    color: #eb4a36;
-    border: 1px solid #eb4a36;
-}
-form .signin-with-social div:nth-child(2):hover{
-    background-color: #eb4a36;
-    color: white;
-}
-
-form .signin-with-social div:nth-child(3){
-    color: #0e76a8;
-    border: 1px solid #0e76a8;
-}
-form .signin-with-social div:nth-child(3):hover{
-    background-color: #0e76a8;
-    color: white;
-}
 form .otherjoin{
     font-size: 18px;
     color: #6b6b6b;
@@ -61,7 +28,7 @@ form .otherjoin{
 form .forgotPass{
     cursor: pointer;
 }
-input{
+form input{
     width: 100%;
     padding: 0.5rem 0;
     border-radius: 50px;
@@ -69,10 +36,10 @@ input{
     text-align: center;
     outline: none;
 }
-input:focus{
+form input:focus{
     border: 2px solid #eb4a36;
 }
-input::placeholder{
+form input::placeholder{
     color: #b3b3b3;
 }
 

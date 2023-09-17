@@ -1,0 +1,137 @@
+@import url('../../App.css');
+
+.Navbar{
+    margin-top: 2.5rem;
+    font-family: "Montserrat", san-serif;
+}
+.Navbar button{
+    font-size: 14px;
+}
+.nav-desktop nav a{
+    text-decoration: none;
+    color: #4a4a4a;
+    font-size: 14px;
+}
+.nav-desktop nav a:hover{
+    text-decoration: none;
+    color: #eb4a36;
+}
+.none{
+    display: none;
+}
+.nav-desktop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-desktop .Sec1{
+    display: flex;
+    align-items: center;
+}
+.nav-desktop .Sec1 nav{
+    display: flex;
+    gap: 2rem;
+}
+
+
+.nav-desktop .Sec2{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+.nav-desktop .Sec2 .signBtn1{
+    border-radius: 50px;
+}
+.nav-desktop .Sec2 .signBtn1 a{
+    color: #4a4a4a;
+}
+.nav-desktop .Sec2 .signBtn2 a:hover{
+    color: white;
+}
+.nav-desktop .Sec2 svg{
+    cursor: pointer;
+    color: #4a4a4a;
+}
+.nav-desktop .Sec2 svg:hover{
+    color: #eb4a36;
+}
+
+
+
+.nav-btn{
+    cursor: pointer;
+    display: none;
+}
+.logo-mobile{
+    color: white;
+}
+.removeInlarge{
+    display: none;
+}
+
+
+
+
+@media only screen and (max-width: 800px) {
+    .removeInSmall{
+        display: none !important
+    }
+    .removeInlarge{
+        display: flex ;
+        flex-direction: column;
+    }
+    
+    .nav-btn{
+        display: block;
+    }
+    .nav-mobile{
+        background-color: rgb(0, 0, 0);
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        transition: 1s;
+        transform: translateX(100vh);
+        z-index: 1000;
+    }
+    .nav-mobile nav{
+        text-align: center;
+    }
+    .nav-mobile nav a{
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+    }
+    .nav-mobile nav a:hover,
+    .nav-mobile nav a:focus,
+    .nav-mobile svg:hover{
+        color: white;
+    }
+    .nav-mobile nav button{
+        width: 100%;
+    }
+    .responsive_nav{
+        transform: none;
+    }
+    .nav-mobile svg{
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 20px;
+        cursor: pointer;
+    }
+}
+.inputSearch{
+    width: 200px;
+    text-align: start;
+    padding: 0.4rem 1rem;
+}
+
+
+
+.userInfo img{
+    width: 45px;
+    border-radius: 50%;
+}

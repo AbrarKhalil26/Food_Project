@@ -1,52 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './SignIn.css'
+import { useNavigate } from 'react-router-dom'
+import LogininWithSocial from '../../components/LogininWithSocial/LogininWithSocial';
 
 // Imported Firebase =======>
-import { signInWithEmailAndPassword, providerFacebook, auth , providerGoogle } from '../../db/config';
-import { signInWithPopup } from "firebase/auth";
+import { auth , signInWithEmailAndPassword } from '../../db/config';
 
-// Imported Font Awesome ======>
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGooglePlusG , faFacebookF ,faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-
-// Imported Pages =====>
-import Home from '../Home/Home';
 
 
 const SignIn = () => {
+    const navigate = useNavigate();
+    
     // Password Input
     const [valuePass, setValuePass] = useState('');
     const [validPass, setVaildPass] = useState('');
     // Input Email
     const [valueEmail, setValueEmail] = useState('');
-    // Login with social
-    const [valueGoogle, setValueGoogle] = useState('');
-    const [valueFacebook, setValueFacebook] = useState(null);
-    
-    
-    
-    // Login With Google
-    const handleClickGoogle = (e) => {
-        signInWithPopup(auth , providerGoogle)
-        .then((data) => {
-            setValueGoogle(data.user.email)
-            localStorage.setItem('email', data.user.email)
-        })
-    }
-    
-    // Login With Facebook
-    const handleClickFacebook = (e) => {
-        signInWithPopup(auth, providerFacebook)
-        .then((data) => {
-            setValueGoogle(data.user.email)
-            localStorage.setItem('email', data.user.email)
-            console.log("faceblook user: " , data);
-        }).catch((err) => {
-            console.log(err);
-        })
-    }
-
-
 
 
     const handelChangePass = (e) => {
@@ -64,31 +33,28 @@ const SignIn = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, valueEmail, valuePass)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                console.log(user);
-                alert("Successfully Sign In");
-                window.location.replace('/');
+        .then((userCredential) => {
+            const user = userCredential.user;
+            const newUser = {
+                fullName: user.displayName,
+                email: user.email,
+                photoURL: user.photoURL
+            }
+            console.log(newUser);
+            alert("Successfully Sign In");
+            navigate('/');
+            localStorage.setItem('user', JSON.stringify(newUser))
 
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                alert("error" + errorCode);
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            alert("error" + errorCode);
         });
     }
 
 
-    useEffect(() => {
-        setValueGoogle(localStorage.getItem('email'))
-        setValueFacebook(localStorage.getItem('email'))
-    })
-
-
-
     return (
         <>
-        {
-            (valueGoogle || valueFacebook) ? <Home/> :
             <div className='signIn my-5 my-md-0'>
                 <div className='container-fluid container-sm'>
                     <div className='row text-center justify-content-between g-5 g-md-0'>
@@ -96,17 +62,9 @@ const SignIn = () => {
                             <form onSubmit={handleSubmit}>
                                 <a href='/home' className='logo'>Kocina</a>
                                 <h2>Sign In to Kocina</h2>
-                                <div className='signin-with-social'>
-                                    <div className='general-icon' onClick={handleClickFacebook}>
-                                        <FontAwesomeIcon icon={faFacebookF}/>
-                                    </div>
-                                    <div className='general-icon' onClick={handleClickGoogle}>
-                                        <FontAwesomeIcon icon={faGooglePlusG}/>
-                                    </div>
-                                    <div className='general-icon'>
-                                        <FontAwesomeIcon icon={faLinkedinIn}/>
-                                    </div>
-                                </div>
+
+                                <LogininWithSocial/>
+
                                 <p className='otherjoin'>Or use your email account:</p>
     
                                 <label>Email</label>
@@ -118,7 +76,7 @@ const SignIn = () => {
     
                                 <p className='forgotPass mt-3'>Forgot your password?</p>
                                 <button type='submit' className='btn general-btn'>
-                                    <a href='#'>Sign In</a>
+                                    <a href='/'>Sign In</a>
                                 </button>
     
                             </form>
@@ -140,8 +98,6 @@ const SignIn = () => {
                     </div>
                 </div>
             </div>
-
-        }
         </>
     )
 }

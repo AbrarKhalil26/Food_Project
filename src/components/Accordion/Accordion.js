@@ -5,7 +5,7 @@ import './Accordion.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus , faMinus } from '@fortawesome/free-solid-svg-icons'
 
-const Accordion = ({ title , links}) => {
+const Accordion = ({ id , title , links}) => {
 
     const [showLinks, setShowLinks] = useState(false);
 
@@ -25,9 +25,9 @@ const Accordion = ({ title , links}) => {
 
                 <ul>
                     {showLinks &&
-                    links.map((link) => {
+                    links.map((link, index) => {
                         return (
-                        <li>
+                        <li key={index}>
                             <a href="#">{link}</a>
                         </li>
                         );

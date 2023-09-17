@@ -11,35 +11,56 @@ import ReactPaginate from 'react-paginate';
 
 
 const SearchContent = () => {
-
+    
     const [valueSearch, setValueSearch] = useState('');
     const [meal, setMeal] = useState([]);
     const [valueSelect, setValueSelect] = useState('Sort by: All');
     const [loading, setLoading] = useState(true);
+    
 
 
+
+    const [favorites, setFavorites] = useState([]);
+
+    const toggleFavorite = (mealId) => {
+        let updatedFavorites;
+        if (favorites.includes(mealId)) {
+          // If the meal is already a favorite, remove it from the favorites list
+            updatedFavorites = favorites.filter((id) => id !== mealId);
+        } else {
+          // If the meal is not a favorite, add it to the favorites list
+            updatedFavorites =[...favorites, mealId];
+        }
+        setFavorites(updatedFavorites);
+        localStorage.setItem('FavoriteMeal', JSON.stringify(updatedFavorites));
+    };
+
+    useEffect(() => {
+        const storedFavorites = JSON.parse(localStorage.getItem('FavoriteMeal'));
+        if (storedFavorites) {
+            setFavorites(storedFavorites);
+        }
+    }, []);
+    
+    
+
+    
     const SearchMeal = (e) => {
         if(e.key === "Enter")
         {
             setLoading(true);
-            // console.log('enter');
             fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${valueSearch}`)
             .then(response => response.json())
             .then(data => {
                 setMeal(data.meals);
                 setLoading(false);
+                localStorage.setItem('dataMealSearch', JSON.stringify(data.meals));
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
             })
         }
     }
-
-    console.log('Meal: ', meal)
-    console.log('loading in  SearchContent', loading)
-
-
-    
 
     // Do Paginate =====================================================>
     const [itemOffset, setItemOffset] = useState(0);
@@ -50,12 +71,13 @@ const SearchContent = () => {
     const pageCount = meal?.length ? Math.ceil(meal.length / itemsPerPage) : 0;
     // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
 
+    // console.log('meal: ',meal)
 
     const handlePageClick = (event) => {
         const newOffset = (event.selected * itemsPerPage) % meal.length;
-        console.log(
-        `User requested page number ${event.selected}, which is offset ${newOffset}`
-        );
+        // console.log(
+        // `User requested page number ${event.selected}, which is offset ${newOffset}`
+        // );
         setItemOffset(newOffset);
     };
     // =================================================================
@@ -107,7 +129,7 @@ const SearchContent = () => {
                                         <div className="contentFood">
                                             <div className='bgFood'></div>
                                             <div className="img-food mb-3">
-                                                <img src={''} alt="" className='placeholder placeholder-img w-100'/>
+                                                <img src='' alt="" className='placeholder placeholder-img w-100'/>
                                             </div>
                                             <div className="details">
                                                 <h6 className='placeholder h-100 w-100'></h6>
@@ -121,7 +143,14 @@ const SearchContent = () => {
                                         valueSelect === res.strCategory ||
                                         valueSelect === "Sort by: All"
                                         ) {
-                                            return <MealItem data={res} key={res.idMeal}/>
+                                            return (
+                                                <MealItem 
+                                                    data={res} 
+                                                    isFavorite={favorites.includes(res.idMeal)}
+                                                    toggleFavorite={toggleFavorite} 
+                                                    key={res.idMeal}
+                                                />
+                                            )
                                     }
                                 console.log(meal);
                             })

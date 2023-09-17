@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './SignUp.css'
+import { useNavigate } from 'react-router-dom';
+import LogininWithSocial from '../../components/LogininWithSocial/LogininWithSocial';
 
 // Imported Firebase =======>
-import { auth , createUserWithEmailAndPassword , providerFacebook , providerGoogle  } from '../../db/config';
-import { signInWithPopup } from "firebase/auth";
+import { auth , createUserWithEmailAndPassword } from '../../db/config';
 
-// Imported Font Awesome ======>
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGooglePlusG , faFacebookF ,faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-import Home from '../Home/Home';
 
 
 const SignUp = () => {
-
+    const navigate = useNavigate();
+    
     // Input Name
     const [valueName, setValueName] = useState('');
     // Input Email
@@ -20,34 +18,6 @@ const SignUp = () => {
     // Password Input
     const [valuePass, setValuePass] = useState('');
     const [validPass, setVaildPass] = useState('');
-
-    // Login with social
-    const [valueGoogle, setValueGoogle] = useState('');
-    const [valueFacebook, setValueFacebook] = useState(null);
-
-
-
-    // Login With Google
-    const handleClickGoogle = (e) => {
-        signInWithPopup(auth , providerGoogle)
-        .then((data) => {
-            setValueGoogle(data.user.email)
-            localStorage.setItem('email', data.user.email)
-        })
-    }
-
-    // Login With Facebook
-    const handleClickFacebook = (e) => {
-        signInWithPopup(auth, providerFacebook)
-        .then((data) => {
-            setValueGoogle(data.user.email)
-            localStorage.setItem('email', data.user.email)
-            console.log("faceblook user: " , data);
-        }).catch((err) => {
-            console.log(err);
-        })
-    }
-
 
 
     const handelChangePass = (e) => {
@@ -70,7 +40,7 @@ const SignUp = () => {
                 const user = success.user;
                 console.log(user);
                 alert("Successfully create an account");
-                window.location.replace('/signin');
+                navigate('/signin');
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -79,15 +49,10 @@ const SignUp = () => {
         );
     }
 
-    useEffect(() => {
-        setValueGoogle(localStorage.getItem('email'))
-        setValueFacebook(localStorage.getItem('email'))
-    })
 
 
     return (
         <>
-        {(valueGoogle || valueFacebook) ? <Home/> :
 
         <div className='signIn my-5 my-md-0'>
             <div className='container-fluid container-sm'>
@@ -96,17 +61,9 @@ const SignUp = () => {
                         <form onSubmit={handleSubmit}>
                             <a href='/home' className='logo'>Kocina</a>
                             <h2>Sign In to Kocina</h2>
-                            <div className='signin-with-social'>
-                                <div className='general-icon'>
-                                    <FontAwesomeIcon icon={faFacebookF} onClick={handleClickFacebook}/>
-                                </div>
-                                <div className='general-icon'>
-                                    <FontAwesomeIcon icon={faGooglePlusG} onClick={handleClickGoogle}/>
-                                </div>
-                                <div className='general-icon'>
-                                    <FontAwesomeIcon icon={faLinkedinIn}/>
-                                </div>
-                            </div>
+                            
+                            <LogininWithSocial/>
+
                             <p className='otherjoin'>Or use your email for registration:</p>
 
                             <label>Full name</label>
@@ -120,7 +77,7 @@ const SignUp = () => {
                             <span className='warningPass'>{validPass}</span>
 
                             <button type='submit' className='btn general-btn mt-3'>
-                                <a href=''>Sign up</a>
+                                <a href='/signin'>Sign up</a>
                             </button>
 
                             <p className='terms mt-3'>By signing up you agree to our <span>terms</span> of service.</p>
@@ -143,7 +100,6 @@ const SignUp = () => {
                 </div>
             </div>
         </div>
-    }
     </>
     )
 }

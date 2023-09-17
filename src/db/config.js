@@ -11,6 +11,7 @@ import {
 const firebaseConfig = {
     apiKey: "AIzaSyCA7XRXj2RgFvNV3Htbu2quUupvhlJGj10",
     authDomain: "food-project-2ff55.firebaseapp.com",
+    databaseURL: "https://food-project-2ff55-default-rtdb.firebaseio.com",
     projectId: "food-project-2ff55",
     storageBucket: "food-project-2ff55.appspot.com",
     messagingSenderId: "693711670406",

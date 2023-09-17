@@ -53,6 +53,17 @@ label{
 .errorinput{
     border: 2px solid #eb4a36;
 }
+input:focus{
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+input{
+    width: 100%;
+    padding: 0.3rem 0;
+    border-radius: 50px;
+    border: 1px solid #b3b3b3;
+    text-align: center;
+    outline: none;
+}
 a{
     text-decoration: none;
 }

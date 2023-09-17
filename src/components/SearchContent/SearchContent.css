@@ -86,7 +86,7 @@ h6{
     font-size: 18px;
     font-weight: 500;
 }
-input:focus {
+.divSearch input:focus {
     border: 0 !important;
 }
 

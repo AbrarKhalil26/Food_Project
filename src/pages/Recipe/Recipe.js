@@ -3,8 +3,8 @@ import './Recipe.css'
 import { useLocation } from 'react-router-dom';
 
 // Imported Pages ======>
-import Navbar from '../../components/Navbar/Navbar'
-import Footer from '../../components/Footer/Footer'
+import Navbar from '../../layout/Navbar/Navbar'
+import Footer from '../../layout/Footer/Footer'
 
 // Imported Font Awesome ======>
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -15,6 +15,7 @@ import { faClock } from '@fortawesome/free-regular-svg-icons';
 // Imported img ======>
 import aliceImg from '../../assets/Alice.jpeg'
 import tomImg from '../../assets/Tom.jpeg'
+// import 
 
 
 const Recipe = () => {
@@ -24,13 +25,32 @@ const Recipe = () => {
   // console.log(data);
   
   var [dataFromLocalStorage, setDataFromLocalStorage] = 
-    useState(localStorage.getItem('data Meal'));
+  useState(localStorage.getItem('data Meal'));
+  // console.log(dataFromLocalStorage);
 
   const [loading, setLoading] = useState(true);
   const [ingredients, setIngredients] = useState([]); 
   const [measures, setMeasure] = useState([]); 
   const [meals, setMeals] = useState();
-
+  const defaultDataMeal = [
+    {
+      strMeal: "Corba",
+      strArea: "Turkish",
+      strMealThumb: "https://www.themealdb.com/images/media/meals/58oia61564916529.jpg",
+      strInstructions: "Pick through your lentils for any foreign debris, rinse them 2 or 3 times, drain, and set aside.  Fair warning, this will probably turn your lentils into a solid block that you’ll have to break up later\r\nIn a large pot over medium-high heat, sauté the olive oil and the onion with a pinch of salt for about 3 minutes, then add the carrots and cook for another 3 minutes.\r\nAdd the tomato paste and stir it around for around 1 minute. Now add the cumin, paprika, mint, thyme, black pepper, and red pepper as quickly as you can and stir for 10 seconds to bloom the spices. Congratulate yourself on how amazing your house now smells.\r\nImmediately add the lentils, water, broth, and salt. Bring the soup to a (gentle) boil.\r\nAfter it has come to a boil, reduce heat to medium-low, cover the pot halfway, and cook for 15-20 minutes or until the lentils have fallen apart and the carrots are completely cooked.\r\nAfter the soup has cooked and the lentils are tender, blend the soup either in a blender or simply use a hand blender to reach the consistency you desire. Taste for seasoning and add more salt if necessary.\r\nServe with crushed-up crackers, torn up bread, or something else to add some extra thickness.  You could also use a traditional thickener (like cornstarch or flour), but I prefer to add crackers for some texture and saltiness.  Makes great leftovers, stays good in the fridge for about a week.",
+      strIngredients: [
+        "Lentils" , "Onion" , "Carrots", "Tomato Puree",
+        "Cumin", "Paprika", "Mint", "Thyme","Black Pepper",
+        "Red Pepper Flakes","Vegetable Stock","Water","Sea Salt",
+      ],
+      strMeasures: [
+        "1 cup ","1 large","1 large","1 tbs","2 tsp","1 tsp ",
+        "1/2 tsp","1/2 tsp","1/4 tsp","1/4 tsp","4 cups ",
+        "1 cup ","Pinch"
+      ]
+    }
+  ]
+  // console.log(defaultDataMeal[0].strMealThumb);
 
 
   // a random number for details Recipe
@@ -46,55 +66,60 @@ const Recipe = () => {
   var roundedFloat = (Math.round(randomFloat * 10) / 10) + randomInt1;
 
 
-  const heartRef = useRef();
-  const colorHeart = () => {
-    heartRef.current.classList.toggle('active');
-  }  
+  // const heartRef = useRef();
+  // const colorHeart = () => {
+  //   heartRef.current.classList.toggle('active');
+  // }  
 
 
 
   
-
+  
   useEffect(() => {
-    
-    // get all ingredients in one Meal
-    const tempIngredients = [];
-    for (let i = 1; i <= 20; i++) {
-      const ingredient = dataFromLocalStorage['strIngredient' + i];
-      if (ingredient !== '') {
-        tempIngredients.push(ingredient);
-      }
-    }
-    setIngredients(tempIngredients);
-    
-    
-    
-    // get all measures in one Meal
-    const tempMeasure = [];
-    for (let i = 1; i <= 20; i++) {
-      const measures = dataFromLocalStorage['strMeasure' + i];
-      if (measures !== '') {
-        tempMeasure.push(measures);
-      }
-    }
-    setMeasure(tempMeasure);
-    
-    
-    // get to other Meals for Other Recipes Section
-    fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`)
-    .then(response => response.json())
-    .then(data => {
-      // console.log(data.categories);
-      setMeals(data.categories);
-      setLoading(false);
-    })
-    .catch(error => {
-      console.error('Error fetching categories:', error);
-    });
-    
-    setDataFromLocalStorage(JSON.parse(localStorage.getItem('data Meal')))
+    // Retrieve data from LocalStorage
+    const storedData = JSON.parse(localStorage.getItem('dataMeal'));
+    setDataFromLocalStorage(storedData);
+    // console.log(storedData);
 
-  },[])
+
+    if (storedData) {
+      // Get all ingredients from the stored data
+      const tempIngredients = Object.keys(storedData)
+        .filter(key => key.startsWith('strIngredient') && storedData[key])
+        .map(key => storedData[key]);
+  
+      setIngredients(tempIngredients);
+      // console.log("tempIngredients:", tempIngredients);
+  
+
+
+
+      // Get all measures from the stored data
+      const tempMeasure = Object.keys(storedData)
+        .filter(key => key.startsWith('strMeasure') && storedData[key])
+        .map(key => storedData[key]);
+  
+      setMeasure(tempMeasure);
+      // console.log("tempMeasure:", tempMeasure);
+    }
+    else{
+      setIngredients(defaultDataMeal[0].strIngredients)
+      setMeasure(defaultDataMeal[0].strMeasures)
+    }
+
+    fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`)     
+    .then(response => response.json())     
+    .then(data => {       
+      // console.log(data.categories);       
+      setMeals(data.categories);       
+      setLoading(false);     
+    })     
+    .catch(error => {       
+      console.log('Error fetching categories:', error);     
+    }); 
+
+
+  }, []);
 
 
 
@@ -110,13 +135,13 @@ const Recipe = () => {
         <div className="container-fluid container-sm main my-4">
           <div className="row justify-content-center align-items-center g-5">
             <div className="img col-12 col-md-6 col-xl-5">
-              <img src={dataFromLocalStorage.strMealThumb} className="col-12" alt="main-pic" />
+              <img src={dataFromLocalStorage == null ? defaultDataMeal[0].strMealThumb : dataFromLocalStorage.strMealThumb} className="col-12" alt="main-pic" />
             </div>
 
             <div className="col-12 col-md-6 col-lg-6">
               <div className="content-container">
-                <h1 className="main-header">{dataFromLocalStorage.strMeal}</h1>
-                <p>{dataFromLocalStorage.strInstructions}</p>
+                <h1 className="main-header">{dataFromLocalStorage == null ? defaultDataMeal[0].strMeal : dataFromLocalStorage.strMeal}</h1>
+                <p>{dataFromLocalStorage == null ? defaultDataMeal[0].strInstructions : dataFromLocalStorage.strInstructions}</p>
 
                 <div className="three-icons pt-5 pb-4">
                   <div className="col-4">
@@ -166,7 +191,7 @@ const Recipe = () => {
                 <div className="last-row">
                   <div>
                     <p className='text-black mb-2'>
-                      Created in <a href="#">{dataFromLocalStorage.strArea}</a>
+                      Created in <a href="#">{dataFromLocalStorage == null ? defaultDataMeal[0].strArea : dataFromLocalStorage.strArea}</a>
                     </p>
                     <span>{randomRecipes} recipes</span>
                   </div>
@@ -672,7 +697,7 @@ const Recipe = () => {
                                 <div className="img-food">
                                   <img src={meal.strCategoryThumb} className="card-img-top" alt="pic-1"/>
                                   <div className='iconHeart'>
-                                    <FontAwesomeIcon icon={faHeart} ref={heartRef} onClick={colorHeart}/>
+                                    <FontAwesomeIcon icon={faHeart}/>
                                   </div>
                                 </div>
                                 <div className="card-body py-1 px-1">
