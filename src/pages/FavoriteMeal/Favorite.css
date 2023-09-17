@@ -1,0 +1,22 @@
+.favoritePage{
+    display: grid;
+    min-height: 100vh;
+}
+.favFooter{
+    align-self: flex-end;
+}
+.favoriteContent{
+    align-self: center;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+}
+.favoriteContent h1{
+    font-family: "Leckerli One", cursive;
+    letter-spacing: 0.2rem;
+    font-weight: 500;
+    font-size: 3rem;
+}
+.favoriteContent img{
+    width: 100%;
+    border-radius: 20px;
+}

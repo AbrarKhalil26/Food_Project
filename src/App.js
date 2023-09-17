@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SignIn from './pages/SignIn/SignIn';
 import SignUp from './pages/SignUP/SignUp';
 import Contact from './pages/Contact/Contact';
+import Favorite from './pages/FavoriteMeal/Favorite';
 
 // Imported Loading ======>
 const LoadingHome  = React.lazy(() => import('./pages/Home/Home'));
@@ -46,6 +47,9 @@ function App() {
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/signin' element={<SignIn/>}/>
           <Route path='/signup' element={<SignUp/>}/>
+
+
+          <Route path='/favorite' element={<Favorite/>}/>
         </Routes>
       
       </BrowserRouter>

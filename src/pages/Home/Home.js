@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight , faPlay } from '@fortawesome/free-solid-svg-icons'
 
 import { questions } from '../../db/dataApi'
+import Favorite from '../FavoriteMeal/Favorite'
 
 
 

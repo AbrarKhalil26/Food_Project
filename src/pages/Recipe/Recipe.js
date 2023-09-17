@@ -25,7 +25,7 @@ const Recipe = () => {
   // console.log(data);
   
   var [dataFromLocalStorage, setDataFromLocalStorage] = 
-  useState(localStorage.getItem('data Meal'));
+  useState(localStorage.getItem('dataMealRecipe'));
   // console.log(dataFromLocalStorage);
 
   const [loading, setLoading] = useState(true);

@@ -32,14 +32,14 @@ const MealItem = ({ data , isFavorite , toggleFavorite } ) => {
             toggleFavorite(data.idMeal);
         }
         else{
-            navigate('/')
+            navigate('/signin')
         }
         
     }
 
 
     const handleClickFood = () => {
-        localStorage.setItem('dataMeal', JSON.stringify(data));
+        localStorage.setItem('dataMealRecipe', JSON.stringify(data));
         navigation("/recipe", {
             replace: true,
             state: { data }
