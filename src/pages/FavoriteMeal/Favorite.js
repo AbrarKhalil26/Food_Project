@@ -23,16 +23,21 @@ const Favorite = () => {
     var roundedFloat = (Math.round(randomFloat * 10) / 10) + randomInt1;
 
 
+
     useEffect(() => {
         if (storedFavorites && storedMealSearch) {
             const filteredMeals = storedMealSearch.filter(item => storedFavorites.includes(item.idMeal));
         
+            console.log('filteredMeals: ', filteredMeals)
+            console.log('favoriteMeals: ', favoriteMeals)
             // Check if filtered meals are different from current favorite meals
-        if (!isEqual(filteredMeals, favoriteMeals))
-            setFavoriteMeals(filteredMeals);
+            if (filteredMeals.length > 0 && 
+                !isEqual(filteredMeals, favoriteMeals) && 
+                !isEqual(filteredMeals.length, favoriteMeals.length)
+            )
+                setFavoriteMeals(filteredMeals);
         }
-    }, [storedFavorites, storedMealSearch]);
-
+    }, [storedFavorites, storedMealSearch, favoriteMeals]);
 
 
     return (
@@ -54,6 +59,7 @@ const Favorite = () => {
                                         <div className='bgFood'></div>
                                         <div className="img-food mb-3">
                                             <img src={item.strMealThumb} alt="" />
+                                            <div className='iconHeart'></div>
                                         </div>
                                         <div className="details mt-4">
                                             <h6>{item.strMeal}</h6>

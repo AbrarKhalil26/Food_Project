@@ -77,7 +77,7 @@ const Recipe = () => {
   
   useEffect(() => {
     // Retrieve data from LocalStorage
-    const storedData = JSON.parse(localStorage.getItem('dataMeal'));
+    const storedData = JSON.parse(localStorage.getItem('dataMealRecipe'));
     setDataFromLocalStorage(storedData);
     // console.log(storedData);
 
@@ -694,10 +694,9 @@ const Recipe = () => {
                           return(
                             <div className="pic col px-2">
                               <div className="card h-100 border-0 ">
-                                <div className="img-food">
+                                <div className="img-food position-relative">
                                   <img src={meal.strCategoryThumb} className="card-img-top" alt="pic-1"/>
                                   <div className='iconHeart'>
-                                    <FontAwesomeIcon icon={faHeart}/>
                                   </div>
                                 </div>
                                 <div className="card-body py-1 px-1">

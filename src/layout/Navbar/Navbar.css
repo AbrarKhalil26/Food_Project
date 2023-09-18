@@ -129,9 +129,69 @@
     padding: 0.4rem 1rem;
 }
 
-
+.userInfo{
+    position: relative;
+}
 
 .userInfo img{
     width: 45px;
     border-radius: 50%;
+    cursor: pointer;
+}
+
+.divInfoUser{
+    position: absolute;
+    top: 70px;
+    left: -150px;
+    padding: 1rem 1rem 1.2rem 1.2rem;
+    line-height: 2rem;
+    border-radius: 13px;
+    box-shadow: 0px 1px 5px #aaa;
+    width: 200px;
+    background-color: rgb(255, 255, 255);
+    z-index: 10;
+}
+.divInfoUser p{
+    color: black;
+}
+.divInfoUser p:hover{
+    color: #eb4a36;
+    cursor: pointer;
+    font-weight: 500;
+}
+.divInfoUser .nameUser{
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.divInfoUser .nameUser:hover{
+    color: inherit;
+    font-weight: 600;
+}
+.divInfoUser .logoutUser{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    color: black;
+    cursor: pointer;
+}
+.divInfoUser .logoutUser p:hover{
+    color: #eb4a36;
+    font-weight: 500;
+}
+
+.Triangle-down{
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid white;
+    cursor: pointer;
+    -webkit-filter: drop-shadow(0px 0px 1px #eee);
+    filter: drop-shadow(0px 0px 4px #e0e0e0);
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    
 }

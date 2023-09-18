@@ -27,14 +27,12 @@ const MealItem = ({ data , isFavorite , toggleFavorite } ) => {
     const handleLove = () => {
         // Color red
         setFavoriteStatus(!favoriteStatus);
-
         if(storedUser){
             toggleFavorite(data.idMeal);
         }
         else{
             navigate('/signin')
         }
-        
     }
 
 

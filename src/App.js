@@ -12,6 +12,8 @@ import SignIn from './pages/SignIn/SignIn';
 import SignUp from './pages/SignUP/SignUp';
 import Contact from './pages/Contact/Contact';
 import Favorite from './pages/FavoriteMeal/Favorite';
+import ForgotPass from './components/ForgotPass/ForgotPass';
+import Profile from './pages/Profile/Profile';
 
 // Imported Loading ======>
 const LoadingHome  = React.lazy(() => import('./pages/Home/Home'));
@@ -50,6 +52,8 @@ function App() {
 
 
           <Route path='/favorite' element={<Favorite/>}/>
+          <Route path='/profile' element={<Profile/>}/>
+          <Route path='/forgetpass' element={<ForgotPass/>}/>
         </Routes>
       
       </BrowserRouter>

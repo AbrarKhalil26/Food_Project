@@ -151,6 +151,7 @@
     padding-right:5%;
 }
 .aside li{
+    list-style: none;
     padding-left: 0;
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(0, 0, 0,0.1);
@@ -254,4 +255,20 @@
 }
 .placeholder-img-recipe{
     min-height: 150px;
+}
+
+
+.img-food .iconHeart{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    color: white;
+    font-size: 20px;
+    border-radius: 13px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: end;
+    transition: 0.2s linear;
+    background-color: rgba(0, 0, 0, 0.1);
 }

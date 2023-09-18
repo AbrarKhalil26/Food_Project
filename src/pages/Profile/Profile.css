@@ -1,0 +1,18 @@
+.ProfilePage{
+    display: grid;
+    min-height: 100vh;
+}
+.ProfileFooter{
+    align-items: flex-end;
+}
+.ProfileContent img{
+    width: 200px;
+    border-radius: 50%;
+}
+.ProfileContent .text p{
+    font-size: 16px;
+}
+.ProfileContent .text span{
+    font-weight: 500;
+    margin-right: 15px;
+}

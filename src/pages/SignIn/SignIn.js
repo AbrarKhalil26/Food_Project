@@ -74,7 +74,9 @@ const SignIn = () => {
                                 <input type='password' name='pass' value={valuePass} onChange={handelChangePass} placeholder='Min 8 characters' required/>
                                 <span className='warningPass'>{validPass}</span>
     
-                                <p className='forgotPass mt-3'>Forgot your password?</p>
+                                <p className='forgotPass my-3'
+                                    onClick={() => navigate('/forgetpass')}
+                                >Forgot your password?</p>
                                 <button type='submit' className='btn general-btn'>
                                     <a href='/'>Sign In</a>
                                 </button>

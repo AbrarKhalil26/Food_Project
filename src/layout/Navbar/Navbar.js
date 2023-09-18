@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 
 // Imported Font Awesome ======>
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faXmark , faBars , faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faXmark , faBars , faSearch, faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter , faFacebookF , faInstagram , faVimeo } from '@fortawesome/free-brands-svg-icons';
 
 const Navbar = () => {
@@ -24,6 +24,11 @@ const Navbar = () => {
     const searchRef = useRef();
     const showSearch = () => {
         searchRef.current.classList.toggle('none');
+    }
+    
+    const [userShow, setUserShow] = useState(false);
+    const showInfoUser = () => {
+        setUserShow(!userShow);
     }
 
     const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -58,11 +63,11 @@ const Navbar = () => {
                             <a href='/signin'>Sign in</a>
                         </button>
 
-                        <button className='btn general-btn py-1 px-4 signBtn2' onClick={signup}>
+                        <button className={`btn general-btn py-1 px-4 signBtn2 ${signinSuccessfully}`} onClick={signup}>
                             <a href='/signup'>Sign up</a>
                         </button>
 
-                        <div className='userInfo'>
+                        <div className='userInfo ms-4'>
                             <img src={
                                 storedUser? 
                                     storedUser.photoURL == null? 
@@ -70,7 +75,20 @@ const Navbar = () => {
                                     : storedUser.photoURL 
                                     : ''} 
                                 alt=''
-                            />
+                                onClick={showInfoUser}
+                            /> 
+                            <div className={`divInfoUser ${userShow? '': 'd-none'}`}>
+                                <div className='Triangle-down'></div>
+                                <p className='nameUser'>{storedUser.fullName}</p>
+                                <p onClick={() => navigate('/profile')}>My Profile</p>
+                                <p onClick={() => navigate('/favorite')}>My Favorite</p>
+                                <div onClick={signup} className='logoutUser'>
+                                    <p>Log out</p> 
+                                    <span>
+                                        <FontAwesomeIcon icon={faArrowRightToBracket}/>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
 
                         <button className='btn nav-btn' onClick={showNavbar}>

@@ -25,10 +25,8 @@ const SearchContent = () => {
     const toggleFavorite = (mealId) => {
         let updatedFavorites;
         if (favorites.includes(mealId)) {
-          // If the meal is already a favorite, remove it from the favorites list
             updatedFavorites = favorites.filter((id) => id !== mealId);
         } else {
-          // If the meal is not a favorite, add it to the favorites list
             updatedFavorites =[...favorites, mealId];
         }
         setFavorites(updatedFavorites);
@@ -43,7 +41,6 @@ const SearchContent = () => {
     }, []);
     
     
-
     
     const SearchMeal = (e) => {
         if(e.key === "Enter")
