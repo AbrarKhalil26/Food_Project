@@ -4,4 +4,4 @@
 #### Live: 
 #### Languages used: React.js, Firebase, API integration, and Bootstrap.
 ### Design:
-[](https://github.com/AbrarKhalil26/Food_Project/blob/main/design/home.jpeg)
+![](https://github.com/AbrarKhalil26/Food_Project/blob/main/design/home.jpeg)
