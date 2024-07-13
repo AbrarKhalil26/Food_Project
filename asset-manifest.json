@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/Food_Project/static/css/main.6e96dfa4.css",
+    "main.js": "/Food_Project/static/js/main.e062fead.js",
+    "static/css/931.d09cd049.chunk.css": "/Food_Project/static/css/931.d09cd049.chunk.css",
+    "static/js/931.0ee71636.chunk.js": "/Food_Project/static/js/931.0ee71636.chunk.js",
+    "static/css/271.a35c78d6.chunk.css": "/Food_Project/static/css/271.a35c78d6.chunk.css",
+    "static/js/271.7c46ce0b.chunk.js": "/Food_Project/static/js/271.7c46ce0b.chunk.js",
+    "static/css/810.eecf4754.chunk.css": "/Food_Project/static/css/810.eecf4754.chunk.css",
+    "static/js/810.9cd67d3f.chunk.js": "/Food_Project/static/js/810.9cd67d3f.chunk.js",
+    "static/js/48.4bb21e3f.chunk.js": "/Food_Project/static/js/48.4bb21e3f.chunk.js",
+    "static/js/850.32b2f9fc.chunk.js": "/Food_Project/static/js/850.32b2f9fc.chunk.js",
+    "static/media/photo-1556911220-e15b29be8c8f.jpeg": "/Food_Project/static/media/photo-1556911220-e15b29be8c8f.9b4296d47bf3475a216c.jpeg",
+    "static/media/singin.jpeg": "/Food_Project/static/media/singin.8932bf2ee52ccc140c4f.jpeg",
+    "static/media/header.jpg": "/Food_Project/static/media/header.832adc765cf6e4ead17a.jpg",
+    "index.html": "/Food_Project/index.html",
+    "main.6e96dfa4.css.map": "/Food_Project/static/css/main.6e96dfa4.css.map",
+    "main.e062fead.js.map": "/Food_Project/static/js/main.e062fead.js.map",
+    "931.d09cd049.chunk.css.map": "/Food_Project/static/css/931.d09cd049.chunk.css.map",
+    "931.0ee71636.chunk.js.map": "/Food_Project/static/js/931.0ee71636.chunk.js.map",
+    "271.a35c78d6.chunk.css.map": "/Food_Project/static/css/271.a35c78d6.chunk.css.map",
+    "271.7c46ce0b.chunk.js.map": "/Food_Project/static/js/271.7c46ce0b.chunk.js.map",
+    "810.eecf4754.chunk.css.map": "/Food_Project/static/css/810.eecf4754.chunk.css.map",
+    "810.9cd67d3f.chunk.js.map": "/Food_Project/static/js/810.9cd67d3f.chunk.js.map",
+    "48.4bb21e3f.chunk.js.map": "/Food_Project/static/js/48.4bb21e3f.chunk.js.map",
+    "850.32b2f9fc.chunk.js.map": "/Food_Project/static/js/850.32b2f9fc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6e96dfa4.css",
+    "static/js/main.e062fead.js"
+  ]
+}
